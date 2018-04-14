@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-1"> </div>
+    <div class="col-10">
+        <div class="card topSpace">
+            <div class="card-header">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                  </nav>
+              </div>
+            <div class="card-body">
+                <h5 class="card-title "> <a routerLink = "/addPost">Add Post</a></h5>
+                <table class="table table-striped" id="myTable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Post</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor = "let showpost of showPosts" class="text-justify">
+                        <th scope="row">{{showpost.id}}</th>
+                        <td>{{showpost.title}}</td>
+                        <td [routerLink] = "['/showComment',showpost.id]" class="btnCss btn btn-light"> Comments</td>
+                        <td [routerLink]="['/updatePost',showpost.id]" class="btnCss btn btn-light"> Update</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+              
+            
+        </div>
+        
+        
+    
+        </div>
+    
+   
+  </div>
+
